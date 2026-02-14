@@ -6,7 +6,7 @@
 /*   By: fclivaz <fclivaz@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/07 19:54:05 by fclivaz           #+#    #+#             */
-/*   Updated: 2026/02/14 16:06:58 by fclivaz          ###   LAUSANNE.ch       */
+/*   Updated: 2026/02/14 23:50:35 by fclivaz          ###   LAUSANNE.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@
 #define MODE_SERVER 0
 #define MODE_CLIENT 1
 
-#define MAXBUFSIZE 512
+#define MAXBUFSIZE 256
 
 enum error_codes
 {

@@ -6,7 +6,7 @@
 /*   By: fclivaz <fclivaz@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/07 19:31:36 by fclivaz           #+#    #+#             */
-/*   Updated: 2026/02/14 16:07:09 by fclivaz          ###   LAUSANNE.ch       */
+/*   Updated: 2026/02/14 23:53:10 by fclivaz          ###   LAUSANNE.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,7 +96,7 @@ int	main(int ac, char *av[], char *env[])
 {
 	std::string		socket_path;
 
-	if (ac < 2)
+	if (ac < 2 || strlen(av[1]) != 1)
 	{
 		std::cerr << USAGE_PLUMBERD << START << USAGE_START << std::endl
 			<< USAGE_ALTER << LISTEN << USAGE_LISTEN << std::endl
@@ -126,44 +126,34 @@ int	main(int ac, char *av[], char *env[])
 	switch (av[1][0])
 	{
 		case START:
-			if (ac > 2)
-			{
-				std::cerr << USAGE_PLUMBERD << START << USAGE_START << std::endl;
-				break;
-			}
-			return start_server(socket_path);
+			if (ac == 2)
+				return start_server(socket_path);
+			std::cerr << USAGE_PLUMBERD << START << USAGE_START << std::endl;
+			break;
 
 		case LISTEN:
-			if (ac < 3 || ac > 3 || strlen(av[2]) > 1)
-			{
-				std::cerr << USAGE_PLUMBERD << LISTEN << USAGE_LISTEN << std::endl;
-				break;
-			}
-			return sub(av[2][0], socket_path);
+			if (ac == 3 && strlen(av[2]) == 1 && strchr("vb", av[2][0]))
+				return sub(av[2][0], socket_path);
+			std::cerr << USAGE_PLUMBERD << LISTEN << USAGE_LISTEN << std::endl;
+			break;
 
 		case VOL_SET:
-			if (ac < 3 || ac > 3)
-			{
-				std::cerr << USAGE_PLUMBERD << VOL_SET << USAGE_VOLSET << std::endl;
-				break;
-			}
-			return send_command(&av[1], socket_path);
+			if (ac == 3)
+				return send_command(&av[1], socket_path);
+			std::cerr << USAGE_PLUMBERD << VOL_SET << USAGE_VOLSET << std::endl;
+			break;
 
 		case VOL_MUT:
-			if (ac > 2)
-			{
-				std::cerr << USAGE_PLUMBERD << VOL_MUT << USAGE_VOLMUT << std::endl;
-				break;
-			}
-			return send_command(&av[1], socket_path);
+			if (ac == 2)
+				return send_command(&av[1], socket_path);
+			std::cerr << USAGE_PLUMBERD << VOL_MUT << USAGE_VOLMUT << std::endl;
+			break;
 
 		case BRI_SET:
-			if (ac < 3 || ac > 4)
-			{
-				std::cerr << USAGE_PLUMBERD << BRI_SET << USAGE_BRISET << std::endl;
-				break;
-			}
-			return send_command(&av[1], socket_path);
+			if (ac == 3 || ac == 4)
+				return send_command(&av[1], socket_path);
+			std::cerr << USAGE_PLUMBERD << BRI_SET << USAGE_BRISET << std::endl;
+			break;
 
 		default:
 			std::cerr << "Incorrect parameter." << std::endl;
