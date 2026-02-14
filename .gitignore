@@ -1,0 +1,47 @@
+# Prerequisites
+*.d
+*.cache
+.cache
+
+# Compiled Object files
+*.slo
+*.lo
+*.o
+*.obj
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Compiled Dynamic libraries
+*.so
+*.dylib
+*.dll
+
+# Fortran module files
+*.mod
+*.smod
+
+# Compiled Static libraries
+*.lai
+*.la
+*.a
+*.lib
+
+# Executables
+*.dYSM
+*.exe
+*.out
+*.app
+
+plumberd
+vgcore.*
+.DS_Store
+Thumbs.db
+.vscode/
+*.swp
+Session.vim
+obj
+*.pid
+*.sock
+*.db
