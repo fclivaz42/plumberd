@@ -6,7 +6,7 @@
 /*   By: fclivaz <fclivaz@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/09 20:14:56 by fclivaz           #+#    #+#             */
-/*   Updated: 2026/02/14 16:04:17 by fclivaz          ###   LAUSANNE.ch       */
+/*   Updated: 2026/02/16 21:22:12 by fclivaz          ###   LAUSANNE.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,6 @@ class Volumed : Popupd
 		Volumed(char mode);
 		~Volumed();
 
-	int	set_volume(const std::string& amount);
-	int	switch_mute();
 };
 
 #endif // !CLASS_VOLUMED_HPP

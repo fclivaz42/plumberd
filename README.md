@@ -15,10 +15,9 @@ I also wanted something fast, performant and easy to setup/use; therefore i came
 
 `plumberd` is written in C++ because the class system allows to quickly spin up modules that can be set up and used in the server. `plumberd` is both the client and the server, depending on how you start it.
 Server-side: running `plumberd s` will launch the server daemon in the background. It creates a socket file the client side will connect itself to.
-Client-side: running `plumberd v` or `plumberd b`(for now) will connect to the running server and execute the command you want to do: either use pulseaudio to increase/decrease/set/mute the volume to whatever you want, or set the brightness % using `brightnessctl`.
 Running `plumberd l < v | b >` will connect to the server and listen to any changes made to volume or brightness. Any changes will be sent from the server to any client listening and each client will just receive the current volume or brightness, in %.
-Each "module" should handle both the client functions (parsing, sending commands, listening) as well as the server functions (executing, formatting the reply); the server only receives the request and forwards it to each connected client.
-A keyboard layout notification as well as wireless/bluetooth update notifiers are being planned.
+Each "module" should handle both the client functions (subscribing) as well as the server functions (listening on other services, formatting the reply); the server only receives the request and forwards it to each connected client.
+A wireless, bluetooth and battery update notifiers are being planned.
 
 ### All of that just for brightness and volume...?
 
