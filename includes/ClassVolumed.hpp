@@ -6,7 +6,7 @@
 /*   By: fclivaz <fclivaz@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/09 20:14:56 by fclivaz           #+#    #+#             */
-/*   Updated: 2026/02/16 21:22:12 by fclivaz          ###   LAUSANNE.ch       */
+/*   Updated: 2026/02/23 20:13:37 by fclivaz          ###   LAUSANNE.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 
 #define VOLUME_POPUP_NAME "volpopup"
 
-class Volumed : Popupd
+class Volumed : public Popupd
 {
 	private:
 		bool	_mute;

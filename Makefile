@@ -6,7 +6,7 @@
 #    By: fclivaz <fclivaz@student.42lausanne.ch>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/07/22 14:16:50 by fclivaz           #+#    #+#              #
-#    Updated: 2026/02/14 16:10:30 by fclivaz          ###   LAUSANNE.ch        #
+#    Updated: 2026/02/23 19:07:39 by fclivaz          ###   LAUSANNE.ch        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,6 +33,7 @@ SRCS	=	${SUBDIR}/plumberd.cpp\
 			${SUBDIR}/AClassPopup.cpp\
 			${SUBDIR}/ClassVolumed.cpp\
 			${SUBDIR}/ClassBrightnessd.cpp\
+			${SUBDIR}/ClassPlumberdActions.cpp\
 			${SUBDIR}/ClassPlumberdServer.cpp
 
 SUBDIR	= srcs
@@ -73,6 +74,7 @@ ${NAME}:	${DEPS}
 		@${MAKE} ${OBJ}
 		@printf "│\tSources for ${CGRN}${NAME}${RSET} done.\n"
 		@${CXX} ${OBJ} -o ${NAME} ${LFLAGS}
+		@strip ${NAME}
 		@printf "├──────────\n├─>>> ${CGRN}${NAME}${RSET} compiled!\n└──────────\n"
 
 ${OBJDIR}/%.o:	${SUBDIR}/%.cpp | ${OBJDIR}

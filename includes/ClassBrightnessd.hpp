@@ -6,7 +6,7 @@
 /*   By: fclivaz <fclivaz@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/09 18:27:28 by fclivaz           #+#    #+#             */
-/*   Updated: 2026/02/16 21:22:00 by fclivaz          ###   LAUSANNE.ch       */
+/*   Updated: 2026/02/23 20:14:02 by fclivaz          ###   LAUSANNE.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@
 
 #define BRIGHTNESS_POPUP_NAME "brightpopup"
 
-class Brightnessd : Popupd
+class Brightnessd : public Popupd
 {
 	public:
 		Brightnessd(char mode);

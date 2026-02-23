@@ -6,7 +6,7 @@
 /*   By: fclivaz <fclivaz@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/09 20:25:36 by fclivaz           #+#    #+#             */
-/*   Updated: 2026/02/16 21:21:29 by fclivaz          ###   LAUSANNE.ch       */
+/*   Updated: 2026/02/23 17:56:48 by fclivaz          ###   LAUSANNE.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,11 @@ Popupd::Popupd(const std::string& name) : _name(name)
 
 Popupd::~Popupd()
 {}
+
+int Popupd::get_level() const
+{
+	return this->_level;
+}
 
 int Popupd::close_popup()
 {
